@@ -23,19 +23,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Admin
-Route::group(['namespace' => 'Admin'], function (){
-    //Admin
-    Route::group(['prefix' => 'admin'], function (){
-        //sales
-        Route::group(['prefix' => 'sales'], function (){
-            Route::get('/', 'SalesController@index')->name('index_sales');
-            // Route::get('/create', 'SalesController@create')->name('film_create');
-            // Route::post('/store', 'SalesController@store')->name('film_store');
-            // Route::get('/{id?}/edit', 'SalesController@edit')->name('film_edit');
-            // Route::put('/{id?}', 'SalesController@update')->name('film_update');
-            // Route::get('/{id?}', 'SalesController@delete')->name('film_delete');
-            // Route::get('pencarian', 'SalesController@pencarian')->name('film_pencarian');
-        });
-    });
-});
+// //Admin
+// Route::group(['namespace' => 'Admin'], function (){
+//     //Admin
+//     Route::group(['prefix' => 'admin'], function (){
+//         //sales
+//         Route::group(['prefix' => 'sales'], function (){
+//             Route::get('/', 'SalesController@index')->name('index_sales');
+//             // Route::get('/create', 'SalesController@create')->name('film_create');
+//             // Route::post('/store', 'SalesController@store')->name('film_store');
+//             // Route::get('/{id?}/edit', 'SalesController@edit')->name('film_edit');
+//             // Route::put('/{id?}', 'SalesController@update')->name('film_update');
+//             // Route::get('/{id?}', 'SalesController@delete')->name('film_delete');
+//             // Route::get('pencarian', 'SalesController@pencarian')->name('film_pencarian');
+//         });
+//     });
+// });
