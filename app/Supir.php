@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Barang extends Model
+class Supir extends Model
 {
-    protected $table = 'barang';    
+    protected $table = 'supir' ;
 }
