@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSupirTable extends Migration
+class CreateKendaraanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateSupirTable extends Migration
      */
     public function up()
     {
-        Schema::create('supir', function (Blueprint $table) {
-            $table->bigIncrements('id_supir');
+        Schema::create('kendaraan', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nomor_kdr');
+            $table->string('jenis_kdr');
+            $table->integer('jumlah_kdr');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateSupirTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supir');
+        Schema::dropIfExists('kendaraan');
     }
 }

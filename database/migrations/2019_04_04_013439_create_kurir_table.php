@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSalesTable extends Migration
+class CreateKurirTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateSalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sales', function (Blueprint $table) {
+        Schema::create('kurir', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_users');
-            $table->integer('id_lokasi');
+            $table->integer('id_helper');
+            $table->integer('id_supir');
+            $table->integer('id_pem');
+            $table->integer('id_knd');
+            $table->integer('id_brg');
+            $table->enum('ket', ['terkirim','gagal']);
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ class CreateSalesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales');
+        Schema::dropIfExists('kurir');
     }
 }

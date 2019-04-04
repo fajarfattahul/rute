@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHelperTable extends Migration
+class CreateLokasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateHelperTable extends Migration
      */
     public function up()
     {
-        Schema::create('helper', function (Blueprint $table) {
-            $table->bigIncrements('id_helper');
+        Schema::create('lokasi', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nama_lks');
+            $table->enum('wilayah', ['utara','selatan']);
+            $table->dateTime('waktu_pemasaran');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateHelperTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('helper');
+        Schema::dropIfExists('lokasi');
     }
 }

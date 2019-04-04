@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Supir extends Model
+class Kurir extends Model
 {
-    protected $table = 'supir' ;
+    //
 }
