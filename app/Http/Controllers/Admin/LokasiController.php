@@ -109,6 +109,8 @@ class LokasiController extends Controller
             'wilayah'           =>   $request->wilayah,
             'waktu_pemesanan'   =>   $request->waktu,
         ]);
+
+        return redirect()->route('datalokasi');
     }
 
     /**
