@@ -24,8 +24,8 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-header">
-                                <a href="#" class="btn btn-lg">
-                                    <span class="label label-warning">Tambah Data</span>
+                                <a href="{{ route('createlokasi') }}" class="btn btn-lg">
+                                    <span class="label label-warning">Tambah Lokasi</span>
                                 </a>
             
                                 <div class="box-tools">
@@ -52,9 +52,9 @@
                                     <td>John Doe</td>
                                     <td>11-7-2014</td>
                                     <td>
-                                        <a href="#"><span class="label label-warning">Edit</span></a>
+                                        <a href="{{ route('editlokasi') }}"><span class="label label-warning">Edit</span></a>
                                         <a><span class="label label">       </span></a>
-                                        <a href="#"><span class="label label-danger">Hapus</span></a>
+                                        <a href="{{ route('deletelokasi') }}"><span class="label label-danger">Hapus</span></a>
                                     </td>
                                 </tr>
                             </table>
