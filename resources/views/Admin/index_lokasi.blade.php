@@ -45,18 +45,24 @@
                                     <th>NO</th>
                                     <th>Nama</th>
                                     <th>Wilayah</th>
+                                    <th>Waktu Pemasaran</th>
                                     <th>Aksi</th>
                                 </tr>
-                                <tr>
-                                    <td>183</td>
-                                    <td>John Doe</td>
-                                    <td>11-7-2014</td>
-                                    <td>
-                                        <a href="{{ route('editlokasi') }}"><span class="label label-warning">Edit</span></a>
-                                        <a><span class="label label">       </span></a>
-                                        <a href="{{ route('deletelokasi') }}"><span class="label label-danger">Hapus</span></a>
-                                    </td>
-                                </tr>
+
+                                {{ $no = 1 }}
+                                @foreach ($data as $d)
+                                    <tr>
+                                        <td>{{$no++}}</td>
+                                        <td>{{$d->nama_lks }}</td>
+                                        <td>{{$d->wilayah}}</td>
+                                        <td>{{$d->waktu_pemasaran}}</td>
+                                        <td>
+                                            <a href="{{ route('editlokasi') }}"><span class="label label-warning">Edit</span></a>
+                                            <a><span class="label label">       </span></a>
+                                            <a href="{{ route('deletelokasi') }}"><span class="label label-danger">Hapus</span></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </table>
                             </div>
                             <!-- /.box-body -->
