@@ -27,11 +27,11 @@
                                 <a href="{{ route('createlokasi') }}" class="btn btn-lg">
                                     <span class="label label-warning">Tambah Lokasi</span>
                                 </a>
-            
+
                                 <div class="box-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
                                         <input type="text" name="table_search" class="form-control pull-right" placeholder="Cari Lokasi">
-                    
+
                                         <div class="input-group-btn">
                                             <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                                         </div>
@@ -57,9 +57,9 @@
                                         <td>{{$d->wilayah}}</td>
                                         <td>{{$d->waktu_pemasaran}}</td>
                                         <td>
-                                            <a href="{{ route('editlokasi') }}"><span class="label label-warning">Edit</span></a>
+                                            <a href="{{ route('editlokasi', $d->id) }}"><span class="label label-warning">Edit</span></a>
                                             <a><span class="label label">       </span></a>
-                                            <a href="{{ route('deletelokasi') }}"><span class="label label-danger">Hapus</span></a>
+                                            <a href="{{ route('deletelokasi', $d->id) }}"><span class="label label-danger">Hapus</span></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-        </section>  
+        </section>
 
   </div>
   <!-- /.content-wrapper -->

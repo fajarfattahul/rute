@@ -22,8 +22,8 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
         Route::get('/createlokasi', 'LokasiController@create')->name('createlokasi');
         Route::post('/storelokasi', 'LokasiController@store')->name('storelokasi');
         Route::get('/editlokasi/{id}', 'LokasiController@edit')->name('editlokasi');
-        // Route::put('/updatelokasi/{id}', 'LokasiController@update')->name('updatelokasi');
-        // Route::delete('/deletelokasi/{id}', 'LokasiController@destroy')->name('deletelokasi');
+        Route::put('/updatelokasi/{id}', 'LokasiController@update')->name('updatelokasi');
+        Route::delete('/deletelokasi/{id}', 'LokasiController@destroy')->name('deletelokasi');
     });
     //====================================================================================//
 
