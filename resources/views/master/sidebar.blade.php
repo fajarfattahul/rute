@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li class="treeview menu-open">
-                            <a href="#">
+                            <a href="{{ route('datalokasi') }}">
                                 <i class="fa fa-dashboard"></i><span>Data Lokasi</span>
                             </a>
                         </li>                        
