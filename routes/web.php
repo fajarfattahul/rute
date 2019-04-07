@@ -17,18 +17,18 @@ Route::get('/', function () {
 
 Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
     //========================= CRUD lokasi =============================//
-    Route::group(['prefix' => '/lokasi', 'namespace' => 'Admin'], function () {
+    Route::group(['prefix' => '/lokasi'], function () {
         Route::get('/datalokasi', 'LokasiController@index')->name('datalokasi');
         Route::get('/createlokasi', 'LokasiController@create')->name('createlokasi');
         Route::post('/storelokasi', 'LokasiController@store')->name('storelokasi');
         Route::get('/editlokasi/{id}', 'LokasiController@edit')->name('editlokasi');
-        Route::put('/updatelokasi/{id}', 'LokasiController@update')->name('updatelokasi');
-        Route::delete('/deletelokasi/{id}', 'LokasiController@destroy')->name('deletelokasi');
+        // Route::put('/updatelokasi/{id}', 'LokasiController@update')->name('updatelokasi');
+        // Route::delete('/deletelokasi/{id}', 'LokasiController@destroy')->name('deletelokasi');
     });
     //====================================================================================//
 
     //========================= CRUD kendaraan =============================//
-    Route::group(['prefix' => '/kendaraan', 'namespace' => 'Admin'], function () {
+    Route::group(['prefix' => '/kendaraan'], function () {
         Route::get('/datakendaraan', 'KendaraanController@index')->name('datakendaraan');
         Route::get('/createkendaraan', 'KendaraanController@create')->name('createkendaraan');
         Route::post('/storekendaraan', 'KendaraanController@store')->name('storekendaraan');
@@ -39,7 +39,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
     //====================================================================================//
 
     //========================= CRUD barang =============================//
-    Route::group(['prefix' => '/barang', 'namespace' => 'Admin'], function () {
+    Route::group(['prefix' => '/barang'], function () {
         Route::get('/databarang', 'BarangController@index')->name('databarang');
         Route::get('/createbarang', 'BarangController@create')->name('createbarang');
         Route::post('/storebarang', 'BarangController@store')->name('storebarang');
