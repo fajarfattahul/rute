@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Lokasi;
+use App\Kendaraan;
 use Validator;
 
-class LokasiController extends Controller
+class KendaraanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class LokasiController extends Controller
      */
     public function index()
     {
-        $data = Lokasi::all();
+        $data = Kendaraan::all();
         return $data;
     }
 
@@ -39,21 +39,21 @@ class LokasiController extends Controller
     public function store(Request $request)
     {
         Validator::make($request->all(), [
-            'lokasi'            =>    'required|max:30',
-            'wilayah'           =>    'required',
-            'waktu'            =>     'required',
+            'tipe'      =>    'required|max:30',
+            'nomor'     =>    'required',
+            'jumlah'    =>    'required',
             // parameter unique harus = nama_table,property
         ], [
-            'lokasi.required'             =>        'lokasi tidak boleh kosong',
-            'lokasi.max'                  =>        'lokasi tidak boleh lebih dari 30 karakter',
-            'wilayah.required'             =>        'wilayah tidak boleh kosong',
-            'waktu.required'             =>        'waktu pemasaran tidak boleh kosong',
+            'tipe.required'     =>        'tipe kendaraan tidak boleh kosong',
+            'tipe.max'          =>        'tipe kendaraan tidak boleh lebih dari 30 karakter',
+            'nomor.required'    =>       'nomor kendaraan tidak boleh kosong',
+            'jumlah.required'   =>      'jumlah unit tidak boleh kosong',
         ])->validate();
 
-        Lokasi::create([
-            'nama_lokasi'       =>   $request->lokasi,
-            'wilayah'           =>   $request->wilayah,
-            'waktu_pemesanan'   =>   $request->waktu,
+        Kendaraan::create([
+            'tipe_kendaraan'    =>   $request->tipe,
+            'no_kendaraan'      =>   $request->nomor,
+            'jumlah_unit'       =>   $request->jumlah,
         ]);
 
         return redirect()->back();
@@ -78,7 +78,7 @@ class LokasiController extends Controller
      */
     public function edit($id)
     {
-        $edit = Lokasi::find($id);
+        $edit = Kendaraan::find($id);
         return $edit;
     }
 
@@ -92,21 +92,21 @@ class LokasiController extends Controller
     public function update(Request $request, $id)
     {
         Validator::make($request->all(), [
-            'lokasi'            =>    'required|max:30',
-            'wilayah'           =>    'required',
-            'waktu'            =>     'required',
+            'tipe'      =>    'required|max:30',
+            'nomor'     =>    'required',
+            'jumlah'    =>    'required',
             // parameter unique harus = nama_table,property
         ], [
-            'lokasi.required'             =>        'lokasi tidak boleh kosong',
-            'lokasi.max'                  =>        'lokasi tidak boleh lebih dari 30 karakter',
-            'wilayah.required'             =>        'wilayah tidak boleh kosong',
-            'waktu.required'             =>        'waktu pemasaran tidak boleh kosong',
+            'tipe.required'     =>       'tipe kendaraan tidak boleh kosong',
+            'tipe.max'          =>       'tipe kendaraan tidak boleh lebih dari 30 karakter',
+            'nomor.required'    =>       'nomor kendaraan tidak boleh kosong',
+            'jumlah.required'   =>       'jumlah unit tidak boleh kosong',
         ])->validate();
 
-        Lokasi::find($id)->update([
-            'nama_lokasi'       =>   $request->lokasi,
-            'wilayah'           =>   $request->wilayah,
-            'waktu_pemesanan'   =>   $request->waktu,
+        Kendaraan::find($id)->update([
+            'tipe_kendaraan'    =>   $request->tipe,
+            'no_kendaraan'      =>   $request->nomor,
+            'jumlah_unit'       =>   $request->jumlah,
         ]);
     }
 
@@ -118,7 +118,7 @@ class LokasiController extends Controller
      */
     public function destroy($id)
     {
-        Lokasi::destroy($id);
+        Kendaraan::destroy($id);
         return redirect()->back();
     }
 }
