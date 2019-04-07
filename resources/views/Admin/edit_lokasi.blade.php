@@ -13,7 +13,7 @@
 
   <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <form action="{{ route('storelokasi') }}" method="POST">
+        <form action="{{ route('updatelokasi', $edit->id) }}" method="POST">
         {{ csrf_field() }}
         
               <!-- SELECT2 EXAMPLE -->
@@ -32,13 +32,13 @@
                         <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Lokasi</label>
-                                    <input type="text" class="form-control" name="lokasi" placeholder="Masukkan Nama Lokasi">
+                                    <input type="text" class="form-control" name="lokasi" placeholder="Masukkan Nama Lokasi" value="{{ $edit->nama_lokasi }}">
                                 </div>
                                 <!-- /.form-group -->
 
                                 <div class="form-group">
                                     <label>Wilayah</label>
-                                        <select class="form-control select2" style="width: 100%;" name="wilayah">
+                                        <select class="form-control select2" style="width: 100%;" name="wilayah" value="{{ $edit->wilayah }}">
                                             <option selected="selected" value="utara">Utara</option>
                                             <option value="selatan">Selatan</option>
                                         </select>
@@ -51,7 +51,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="datetime-local" class="form-control pull-right" name="waktu">
+                                        <input type="datetime-local" class="form-control pull-right" name="waktu" value="{{ $edit->waktu_pemesanan }}">
                                     </div>
                                     <!-- /.input group -->
                                 </div>

@@ -10,7 +10,7 @@
             </span>
           </a>
             <ul class="treeview-menu">
-                <li class="treeview menu-open">
+                <li class="active treeview menu-open">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Sales</span>
                         <span class="pull-right-container">
@@ -18,34 +18,14 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="treeview menu-open">
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i><span>Data Sales</span>
-                            </a>
-                        </li>
-                        <li class="treeview menu-open">
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i><span>Data Kurir</span>
-                            </a>
-                        </li>
-                        <li class="treeview menu-open">
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i><span>Data Barang</span>
-                            </a>
-                        </li>
-                        <li class="treeview menu-open">
-                            <a href="{{ route('datalokasi') }}">
-                                <i class="fa fa-dashboard"></i><span>Data Lokasi</span>
-                            </a>
-                        </li>                        
-                        <li class="treeview menu-open">
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i><span>Data Kendaraan</span>
-                            </a>
-                        </li>
+                        {{-- <li><a href="{{ route('datalokasi') }}">Data Sales</a></li>                       
+                        <li><a href="{{ route('datalokasi') }}">Data Kurir</a></li>                       
+                        <li><a href="{{ route('datalokasi') }}">Data Barang</a></li>                       
+                        <li><a href="{{ route('datalokasi') }}">Data Kendaraan</a></li>                        --}}
+                        <li><a href="{{ route('datalokasi') }}">Data Lokasi</a></li>                       
                     </ul>
                 </li>
-                <li class="treeview menu-open">
+                <li class="active treeview menu-open">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Pemesanan</span>
                         <span class="pull-right-container">

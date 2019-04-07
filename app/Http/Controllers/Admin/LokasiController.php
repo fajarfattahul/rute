@@ -28,7 +28,7 @@ class LokasiController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.create_lokasi');
     }
 
     /**
@@ -57,7 +57,7 @@ class LokasiController extends Controller
             'waktu_pemesanan'   =>   $request->waktu,
         ]);
 
-        return redirect()->back();
+        return redirect()->route('datalokasi');
     }
 
     /**
@@ -80,7 +80,7 @@ class LokasiController extends Controller
     public function edit($id)
     {
         $edit = Lokasi::find($id);
-        return $edit;
+        return view('Admin.edit_lokasi', compact('edit'));        
     }
 
     /**
@@ -120,6 +120,6 @@ class LokasiController extends Controller
     public function destroy($id)
     {
         Lokasi::destroy($id);
-        return redirect()->back();
+        return redirect()->route('datalokasi');        
     }
 }
