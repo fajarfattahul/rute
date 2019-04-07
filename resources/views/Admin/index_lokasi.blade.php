@@ -48,14 +48,12 @@
                                     <th>Waktu Pemasaran</th>
                                     <th>Aksi</th>
                                 </tr>
-
-                                {{ $no = 1 }}
                                 @foreach ($data as $d)
                                     <tr>
                                         <td>{{$no++}}</td>
-                                        <td>{{$d->nama_lks }}</td>
+                                        <td>{{$d->nama_lokasi }}</td>
                                         <td>{{$d->wilayah}}</td>
-                                        <td>{{$d->waktu_pemasaran}}</td>
+                                        <td>{{$d->waktu_pemesanan}}</td>
                                         <td>
                                             <a href="{{ route('editlokasi', $d->id) }}"><span class="label label-warning">Edit</span></a>
                                             <a><span class="label label">       </span></a>
