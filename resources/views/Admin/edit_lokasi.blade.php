@@ -15,7 +15,7 @@
     <div class="content-wrapper">
         <form action="{{ route('updatelokasi', $edit->id) }}" method="POST">
         {{ csrf_field() }}
-        
+
               <!-- SELECT2 EXAMPLE -->
             <div class="box box-default">
                 <div class="box-header with-border">
@@ -51,7 +51,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="datetime-local" class="form-control pull-right" name="waktu" value="{{ $edit->waktu_pemesanan }}">
+                                        <input type="datetime-local" class="form-control pull-right" name="waktu" value="{{ $edit->waktu_pemesanan}}">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -73,7 +73,7 @@
                 </div>
                 <!-- /.box-body -->
             </div>
-            <!-- /.box -->    
+            <!-- /.box -->
         </form>
     </div>
   <!-- /.content-wrapper -->

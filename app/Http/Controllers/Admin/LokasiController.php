@@ -80,7 +80,7 @@ class LokasiController extends Controller
     public function edit($id)
     {
         $edit = Lokasi::find($id);
-        return view('Admin.edit_lokasi', compact('edit'));        
+        return view('Admin.edit_lokasi', compact('edit'));
     }
 
     /**
@@ -117,9 +117,9 @@ class LokasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        Lokasi::destroy($id);
-        return redirect()->route('datalokasi');        
+        Lokasi::destroy($request->delete);
+        return redirect()->route('datalokasi');
     }
 }
