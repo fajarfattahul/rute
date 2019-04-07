@@ -17,7 +17,7 @@ class LokasiController extends Controller
     public function index()
     {
         $data = Lokasi::all();
-        return view('Admin.index' ,$data);
+        return view('Admin.index_lokasi' ,$data);
     }
 
     /**
