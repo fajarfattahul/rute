@@ -66,6 +66,7 @@
 
                     </div>
                     <!-- /.row -->
+                    {{ method_field('put') }}
                 </div>
                 <!-- /.box-body -->
             </div>

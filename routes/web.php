@@ -34,7 +34,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
         Route::post('/storekendaraan', 'KendaraanController@store')->name('storekendaraan');
         Route::get('/editkendaraan/{id}', 'KendaraanController@edit')->name('editkendaraan');
         Route::put('/updatekendaraan/{id}', 'KendaraanController@update')->name('updatekendaraan');
-        Route::delete('/deletekendaraan/{id}', 'KendaraanController@destroy')->name('deletekendaraan');
+        Route::delete('/deletekendaraan', 'KendaraanController@destroy')->name('deletekendaraan');
     });
     //====================================================================================//
 
@@ -45,7 +45,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
         Route::post('/storebarang', 'BarangController@store')->name('storebarang');
         Route::get('/editbarang/{id}', 'BarangController@edit')->name('editbarang');
         Route::put('/updatebarang/{id}', 'BarangController@update')->name('updatebarang');
-        Route::delete('/deletebarang/{id}', 'BarangController@destroy')->name('deletebarang');
+        Route::delete('/deletebarang', 'BarangController@destroy')->name('deletebarang');
     });
     //====================================================================================//
 });

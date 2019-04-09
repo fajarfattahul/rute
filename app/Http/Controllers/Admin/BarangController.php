@@ -125,6 +125,8 @@ class BarangController extends Controller
             'stock'             =>   $request->stock,
             'pembuatan'         =>   $request->pembuatan,
         ]);
+
+        return redirect()->route('databarang');
     }
 
     /**
@@ -133,9 +135,9 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        Barang::destroy($id);
+        Barang::destroy($request->delete);
         return redirect()->route('databarang');        
         // return redirect()->back();
     }

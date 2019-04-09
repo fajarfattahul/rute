@@ -61,7 +61,12 @@
                                         <td>
                                             <a href="{{ route('editbarang', $d->id) }}"><span class="label label-warning">Edit</span></a>
                                             <a><span class="label label">       </span></a>
-                                            <a href="{{ route('deletebarang', $d->id) }}"><span class="label label-danger">Hapus</span></a>
+                                            <form action="{{ route('deletebarang') }}" method="post">
+                                                {{ csrf_field() }}
+                                                <button type="submit" name="delete" value="{{$d->id}}" class="label label-danger">Hapus</button>
+                                                {{ method_field('delete') }}
+                                            </form>
+                                            {{-- <a href="{{ route('deletelokasi', $d->id) }}"><span class="label label-danger">Hapus</span></a> --}}
                                         </td>
                                     </tr>
                                 @endforeach

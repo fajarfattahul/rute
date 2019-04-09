@@ -87,6 +87,7 @@
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->    
+            {{ method_field('put') }}
         </form>
     </div>
   <!-- /.content-wrapper -->

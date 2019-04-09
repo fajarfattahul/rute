@@ -109,6 +109,9 @@ class KendaraanController extends Controller
             'no_kendaraan'      =>   $request->nomork,
             'jumlah_unit'       =>   $request->jumlahk,
         ]);
+
+        return redirect()->route('datakendaran');
+
     }
 
     /**
@@ -117,9 +120,9 @@ class KendaraanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        Kendaraan::destroy($id);
+        Kendaraan::destroy($request->delete);
         return redirect()->route('datakendaraan');        
     }
 }
