@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('nama');
             $table->date('tgl_lahir');
-            $table->enum('jk',['L','P']);
-            $table->enum('jabatan',['Admin','Sales','Helper','Driver']);
+            $table->enum('jk', ['L', 'P']);
+            $table->string('jabatan');
             $table->rememberToken();
             $table->timestamps();
         });
