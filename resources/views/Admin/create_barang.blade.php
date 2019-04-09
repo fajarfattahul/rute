@@ -13,13 +13,13 @@
 
   <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <form action="{{ route('storekendaraan') }}" method="POST">
+        <form action="{{ route('storebarang') }}" method="POST">
         {{ csrf_field() }}
         
               <!-- SELECT2 EXAMPLE -->
             <div class="box box-default">
                 <div class="box-header with-border">
-                <h3 class="box-title">Data Kendaraan</h3>
+                <h3 class="box-title">Data Barang</h3>
                 </div>
                 <!-- /.box-header -->
 
@@ -32,24 +32,41 @@
                         <div class="col-md-6">
 
                                 <div class="form-group">
-                                    <label>Tipe Kendaraan</label>
-                                    <select class="form-control select2" style="width: 100%;" name="tipe">
-                                        <option selected="selected" value="truck">Mobil Truck</option>
-                                        <option value="pickup">Mobil Pick Up</option>
-                                        <option value="box">Mobil Box</option>
+                                    <label>Nama Barang</label>
+                                    <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Barang">
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <label>Jenis Barang</label>
+                                    <select class="form-control select2" style="width: 100%;" name="jenis">
+                                        <option selected="selected" value="snack">Snack</option>
+                                        <option value="mie">Mie Instan</option>
                                     </select>
                                 </div>
                                 <!-- /.form-group -->
 
                                 <div class="form-group">
-                                    <label>Nomor Kendaraan</label>
-                                    <input type="text" class="form-control" name="nomork" placeholder="Masukkan Nomor Kendaraan">
+                                    <label>Harga Barang</label>
+                                    <input type="text" class="form-control" name="harga" placeholder="Masukkan Harga Barang">
                                 </div>
                                 <!-- /.form-group -->
 
                                 <div class="form-group">
-                                    <label>Jumlah Unit</label>
-                                    <input type="text" class="form-control" name="jumlahk" placeholder="Masukkan Jumlah Kendaraan">
+                                    <label>Jumlah Stok</label>
+                                    <input type="text" class="form-control" name="stock" placeholder="Masukkan Jumlah Stok">
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <label>Waktu Pembuatan</label>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="date" class="form-control pull-right" name="pembuatan">
+                                    </div>
+                                    <!-- /.input group -->
                                 </div>
                                 <!-- /.form-group -->
 

@@ -17,7 +17,8 @@ class KendaraanController extends Controller
     public function index()
     {
         $data = Kendaraan::all();
-        return $data;
+        $no = 1;
+        return view('Admin.index_kendaraan', compact('data', 'no'));
     }
 
     /**
@@ -27,7 +28,7 @@ class KendaraanController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.create_kendaraan');        
     }
 
     /**
@@ -40,8 +41,8 @@ class KendaraanController extends Controller
     {
         Validator::make($request->all(), [
             'tipe'      =>    'required|max:30',
-            'nomor'     =>    'required',
-            'jumlah'    =>    'required',
+            'nomork'     =>    'required',
+            'jumlahk'    =>    'required',
             // parameter unique harus = nama_table,property
         ], [
             'tipe.required'     =>        'tipe kendaraan tidak boleh kosong',
@@ -52,11 +53,11 @@ class KendaraanController extends Controller
 
         Kendaraan::create([
             'tipe_kendaraan'    =>   $request->tipe,
-            'no_kendaraan'      =>   $request->nomor,
-            'jumlah_unit'       =>   $request->jumlah,
+            'no_kendaraan'      =>   $request->nomork,
+            'jumlah_unit'       =>   $request->jumlahk,
         ]);
 
-        return redirect()->back();
+        return redirect()->route('datakendaraan');        
     }
 
     /**
@@ -79,7 +80,7 @@ class KendaraanController extends Controller
     public function edit($id)
     {
         $edit = Kendaraan::find($id);
-        return $edit;
+        return view('Admin.edit_kendaraan', compact('edit'));                
     }
 
     /**
@@ -93,8 +94,8 @@ class KendaraanController extends Controller
     {
         Validator::make($request->all(), [
             'tipe'      =>    'required|max:30',
-            'nomor'     =>    'required',
-            'jumlah'    =>    'required',
+            'nomork'     =>    'required',
+            'jumlahk'    =>    'required',
             // parameter unique harus = nama_table,property
         ], [
             'tipe.required'     =>       'tipe kendaraan tidak boleh kosong',
@@ -105,8 +106,8 @@ class KendaraanController extends Controller
 
         Kendaraan::find($id)->update([
             'tipe_kendaraan'    =>   $request->tipe,
-            'no_kendaraan'      =>   $request->nomor,
-            'jumlah_unit'       =>   $request->jumlah,
+            'no_kendaraan'      =>   $request->nomork,
+            'jumlah_unit'       =>   $request->jumlahk,
         ]);
     }
 
@@ -119,6 +120,6 @@ class KendaraanController extends Controller
     public function destroy($id)
     {
         Kendaraan::destroy($id);
-        return redirect()->back();
+        return redirect()->route('datakendaraan');        
     }
 }

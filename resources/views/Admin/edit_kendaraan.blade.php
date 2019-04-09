@@ -13,7 +13,7 @@
 
   <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <form action="{{ route('storekendaraan') }}" method="POST">
+        <form action="{{ route('updatekendaraan', $edit->id) }}" method="POST">
         {{ csrf_field() }}
         
               <!-- SELECT2 EXAMPLE -->
@@ -33,7 +33,7 @@
 
                                 <div class="form-group">
                                     <label>Tipe Kendaraan</label>
-                                    <select class="form-control select2" style="width: 100%;" name="tipe">
+                                    <select class="form-control select2" style="width: 100%;" name="tipe" value="{{ $edit->tipe_kendaraan }}">
                                         <option selected="selected" value="truck">Mobil Truck</option>
                                         <option value="pickup">Mobil Pick Up</option>
                                         <option value="box">Mobil Box</option>
@@ -43,13 +43,13 @@
 
                                 <div class="form-group">
                                     <label>Nomor Kendaraan</label>
-                                    <input type="text" class="form-control" name="nomork" placeholder="Masukkan Nomor Kendaraan">
+                                    <input type="text" class="form-control" name="nomork" placeholder="Masukkan Nomor Kendaraan" value="{{ $edit->no_kendaraan }}">
                                 </div>
                                 <!-- /.form-group -->
 
                                 <div class="form-group">
                                     <label>Jumlah Unit</label>
-                                    <input type="text" class="form-control" name="jumlahk" placeholder="Masukkan Jumlah Kendaraan">
+                                    <input type="text" class="form-control" name="jumlahk" placeholder="Masukkan Jumlah Kendaraan" value="{{ $edit->jumlah_unit }}">
                                 </div>
                                 <!-- /.form-group -->
 

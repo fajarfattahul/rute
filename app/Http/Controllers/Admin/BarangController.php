@@ -17,7 +17,8 @@ class BarangController extends Controller
     public function index()
     {
         $data = Barang::all();
-        return $data;
+        $no = 1;
+        return view('Admin.index_barang', compact('data', 'no'));
     }
 
     /**
@@ -27,7 +28,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.create_barang');                
     }
 
     /**
@@ -63,7 +64,8 @@ class BarangController extends Controller
             'pembuatan'         =>   $request->pembuatan,
         ]);
 
-        return redirect()->back();
+        return redirect()->route('databarang');        
+        // return redirect()->back();
     }
 
     /**
@@ -86,7 +88,8 @@ class BarangController extends Controller
     public function edit($id)
     {
         $edit = Barang::find($id);
-        return $edit;
+        return view('Admin.edit_barang', compact('edit'));                                
+        // return $edit;
     }
 
     /**
@@ -133,6 +136,7 @@ class BarangController extends Controller
     public function destroy($id)
     {
         Barang::destroy($id);
-        return redirect()->back();
+        return redirect()->route('databarang');        
+        // return redirect()->back();
     }
 }

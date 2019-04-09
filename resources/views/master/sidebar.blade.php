@@ -3,12 +3,12 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview menu-open">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
+            <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
             <ul class="treeview-menu">
                 <li class="active treeview menu-open">
                     <a href="#">
@@ -18,10 +18,10 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        {{-- <li><a href="{{ route('datalokasi') }}">Data Sales</a></li>                       
-                        <li><a href="{{ route('datalokasi') }}">Data Kurir</a></li>                       
-                        <li><a href="{{ route('datalokasi') }}">Data Barang</a></li>                       
-                        <li><a href="{{ route('datalokasi') }}">Data Kendaraan</a></li>                        --}}
+                        {{-- <li><a href="{{ route('datalokasi') }}">Data Sales</a></li>                        --}}
+                        {{-- <li><a href="{{ route('datalokasi') }}">Data Kurir</a></li>                        --}}
+                        <li><a href="{{ route('databarang') }}">Data Barang</a></li>                       
+                        <li><a href="{{ route('datakendaraan') }}">Data Kendaraan</a></li>                       
                         <li><a href="{{ route('datalokasi') }}">Data Lokasi</a></li>                       
                     </ul>
                 </li>
