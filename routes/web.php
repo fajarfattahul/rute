@@ -57,6 +57,15 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['au
         Route::put('/updateuser/{id}', 'UserController@update')->name('updateuser');
         Route::delete('/deleteuser', 'UserController@destroy')->name('deleteuser');
     });
+
+    Route::group(['prefix' => '/pemasaran'], function () {
+        Route::get('/datapemasaran', 'PemasaranController@index')->name('datapemasaran');
+        Route::get('/createpemasaran', 'PemasaranController@create')->name('createpemasaran');
+        Route::post('/storepemasaran', 'PemasaranController@store')->name('storepemasaran');
+        Route::get('/editpemasaran/{id}', 'PemasaranController@edit')->name('editpemasaran');
+        Route::put('/updatepemasaran/{id}', 'PemasaranController@update')->name('updatepemasaran');
+        Route::delete('/deletepemasaran', 'PemasaranController@destroy')->name('deletepemasaran');
+    });
 });
 
 // Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
