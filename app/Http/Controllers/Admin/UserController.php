@@ -69,7 +69,7 @@ class UserController extends Controller
             'name'          =>   $request->nama,
             'tgl_lahir'     =>   $request->tgl,
             'jk'            =>   $request->gender,
-            'jabatan'       =>   $request->jabatan,
+            'jabatan'       =>   json_encode([$request->jabatan]),
             'password'      =>  $request->password,
         ]);
 
@@ -138,7 +138,7 @@ class UserController extends Controller
             'name'          =>   $request->nama,
             'tgl_lahir'     =>   $request->tgl,
             'jk'            =>   $request->gender,
-            'jabatan'       =>   $request->jabatan,
+            'jabatan'       =>   json_encode([$request->jabatan]),
             'password'      =>  $request->password,
         ]);
 
