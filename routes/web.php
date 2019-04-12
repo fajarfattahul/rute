@@ -50,6 +50,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['au
     //====================================================================================//
     //========================= CRUD User =============================//
     Route::group(['prefix' => '/user'], function () {
+        // Route::get('/', 'UserController@admin')->name('dataadmin');
         Route::get('/datauser', 'UserController@index')->name('datauser');
         Route::get('/createuser', 'UserController@create')->name('createuser');
         Route::post('/storeuser', 'UserController@store')->name('storeuser');

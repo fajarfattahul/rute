@@ -18,7 +18,8 @@ class UserController extends Controller
     {
         $data = User::all();
         $no = 1;
-        // return view('', compact('data'));
+        return view('Admin.index', compact('data', 'no'));
+        
     }
 
     /**
@@ -28,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        // return view('Admin.create_lokasi');
+        return view('Admin.create');
     }
 
     /**
@@ -73,7 +74,7 @@ class UserController extends Controller
             'password'      =>  $request->password,
         ]);
 
-        return redirect()->route('datausers');
+        return redirect()->route('datauser');
     }
 
     /**
