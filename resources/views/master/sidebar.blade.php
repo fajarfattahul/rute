@@ -23,6 +23,8 @@
                         <li><a href="{{ route('databarang') }}">Data Barang</a></li>                       
                         <li><a href="{{ route('datakendaraan') }}">Data Kendaraan</a></li>                       
                         <li><a href="{{ route('datalokasi') }}">Data Lokasi</a></li>                       
+                        <li><a href="">Data Sales</a></li>                       
+                        <li><a href="">Data Kurir</a></li>                       
                     </ul>
                 </li>
                 <li class="active treeview menu-open">
