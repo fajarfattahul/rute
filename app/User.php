@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'nama', 'tgl_lahir', 'jk', 'jabatan', 'email', 'password',
+        'username', 'name', 'tgl_lahir', 'jk', 'jabatan', 'email', 'password',
     ];
 
     /**
@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function admin()
+    {
+        $admin = json_encode(["Admin"]);
+        if ($this->jabatan == $admin) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

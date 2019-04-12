@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
     //========================= CRUD lokasi =============================//
     Route::group(['prefix' => '/lokasi'], function () {
         Route::get('/datalokasi', 'LokasiController@index')->name('datalokasi');
@@ -48,6 +48,15 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
         Route::delete('/deletebarang', 'BarangController@destroy')->name('deletebarang');
     });
     //====================================================================================//
+    //========================= CRUD User =============================//
+    Route::group(['prefix' => '/user'], function () {
+        Route::get('/datauser', 'UserController@index')->name('datauser');
+        Route::get('/createuser', 'UserController@create')->name('createuser');
+        Route::post('/storeuser', 'UserController@store')->name('storeuser');
+        Route::get('/edituser/{id}', 'UserController@edit')->name('edituser');
+        Route::put('/updateuser/{id}', 'UserController@update')->name('updateuser');
+        Route::delete('/deleteuser', 'UserController@destroy')->name('deleteuser');
+    });
 });
 
 // Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
@@ -56,4 +65,4 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

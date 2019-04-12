@@ -15,7 +15,7 @@ class AdministratorSeeder extends Seeder
     {
         User::create([
             'username'          =>  'Admin',
-            'nama'              =>  'fatur',
+            'name'              =>  'fatur',
             'tgl_lahir'         =>  '1998-08-18',
             'jk'                =>  'L',
             'jabatan'           =>  json_encode(["Admin"]),
