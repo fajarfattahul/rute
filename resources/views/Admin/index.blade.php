@@ -76,6 +76,34 @@
                     <!-- /.col -->
                 </div>
                 <!-- /.row -->
+                <table class="table table-hover">
+                    <h3>Data User</h3>
+                        <tr>
+                            <th>NO</th>
+                            <th>Nama</th>
+                            <th>Jabatan</th>
+                            <th>Email</th>
+                            <th>Aksi</th>
+                        </tr>
+                        @foreach ($data as $d)
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>{{$d->name }}</td>
+                                <td>{{$d->jk}}</td>
+                                <td>{{$d->jabatan}}</td>
+                                <td>
+                                    <a href="{{ route('edituser', $d->id) }}"><span class="label label-warning">Edit</span></a>
+                                    <a><span class="label label">       </span></a>
+                                    <form action="{{ route('deleteuser') }}" method="post">
+                                        {{ csrf_field() }}
+                                        <button type="submit" name="delete" value="{{$d->id}}" class="label label-danger">Hapus</button>
+                                        {{ method_field('delete') }}
+                                    </form>
+                                    {{-- <a href="{{ route('deletelokasi', $d->id) }}"><span class="label label-danger">Hapus</span></a> --}}
+                                </td>
+                            </tr>
+                        @endforeach
+                    </table>
             </div>
         </section>    
 
