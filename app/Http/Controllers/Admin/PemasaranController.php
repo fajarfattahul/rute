@@ -28,7 +28,7 @@ class PemasaranController extends Controller
      */
     public function create()
     {
-        return view('Admin.create_lokasi');
+        // return view('Admin.create_lokasi');
     }
 
     /**
