@@ -18,7 +18,7 @@ class AdministratorSeeder extends Seeder
             'name'              =>  'fatur',
             'tgl_lahir'         =>  '1998-08-18',
             'jk'                =>  'L',
-            'jabatan'           =>  json_encode(["Admin"]),
+            'jabatan'           =>  json_encode(["admin"]),
             'email'             =>  'fatur@gmail.com',
             'password'          =>  Hash::make('501501501'),
             'remember_token'    =>  str_random(60),

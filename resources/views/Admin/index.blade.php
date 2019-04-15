@@ -24,11 +24,11 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="info-box">
-                            <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+                            <span class="info-box-icon bg-aqua"><i class="fa fa-user-o"></i></span>
                         
                             <div class="info-box-content">
-                                <span class="info-box-text">Messages</span>
-                                <span class="info-box-number">1,410</span>
+                                <span class="info-box-text">User</span>
+                                <span class="info-box-number">{{$count_user}}</span>
                             </div>
                         <!-- /.info-box-content -->
                         </div>
@@ -37,11 +37,11 @@
                         <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="info-box">
-                            <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
+                            <span class="info-box-icon bg-green"><i class="fa fa-shopping-cart"></i></span>
                         
                             <div class="info-box-content">
-                              <span class="info-box-text">Bookmarks</span>
-                              <span class="info-box-number">410</span>
+                              <span class="info-box-text">Sales</span>
+                              <span class="info-box-number">{{$count_sales}}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -50,11 +50,11 @@
                         <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="info-box">
-                            <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+                            <span class="info-box-icon bg-yellow"><i class="fa fa-car"></i></span>
                         
                             <div class="info-box-content">
-                              <span class="info-box-text">Uploads</span>
-                              <span class="info-box-number">13,648</span>
+                              <span class="info-box-text">Supir</span>
+                              <span class="info-box-number">{{$count_supir}}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -63,11 +63,11 @@
                     <!-- /.col -->
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="info-box">
-                            <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+                            <span class="info-box-icon bg-red"><i class="fa fa-handshake-o "></i></span>
                         
                             <div class="info-box-content">
-                              <span class="info-box-text">Likes</span>
-                              <span class="info-box-number">93,139</span>
+                              <span class="info-box-text">Helper</span>
+                              <span class="info-box-number">{{$count_helper}}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -89,8 +89,8 @@
                             <tr>
                                 <td>{{$no++}}</td>
                                 <td>{{$d->name }}</td>
-                                <td>{{$d->jk}}</td>
-                                <td>{{$d->jabatan}}</td>
+                                <td>{{ preg_replace('/[^A-Za-z0-9\-]/', '', $d->jabatan) }}</td>
+                                <td>{{$d->email}}</td>
                                 <td>
                                     <a href="{{ route('edituser', $d->id) }}"><span class="label label-warning">Edit</span></a>
                                     <a><span class="label label">       </span></a>
