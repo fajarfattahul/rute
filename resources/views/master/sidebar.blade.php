@@ -33,11 +33,9 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="treeview menu-open">
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i><span>Data Pemesanan</span>
-                            </a>
-                        </li>
+                        <li><a href="#">Data Pemasaran</a></li>                       
+                        <li><a href="#">Data Pemesanan</a></li>                       
+                        <li><a href="#">Data Pengiriman</a></li>                       
                     </ul>
                 </li>
             </ul>
