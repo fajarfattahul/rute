@@ -52,4 +52,14 @@ class User extends Authenticatable
             return false;
         }
     }
+
+    public function sales()
+    {
+        $sales = json_encode(["sales"]);
+        if ($this->jabatan == $sales) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
