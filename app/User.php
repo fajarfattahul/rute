@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function lokasis()
     {
-        return $this->belongsToMany(Lokasi::class, 'pemasarans', 'id_sales', 'id_lokasi');
+        return $this->belongsToMany('App\Lokasi', 'pemasarans', 'id_sales', 'id_lokasi');
     }
 
     public function admin()

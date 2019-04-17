@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use Validator;
 
@@ -25,9 +26,8 @@ class UserController extends Controller
         $data['count_supir'] = User::where('jabatan', '["supir"]')->count();
 
         // $no = 1;
-        // $countuser= 
+        // $countuser=
         return view('Admin.index', $data);
-        
     }
 
     /**
@@ -79,7 +79,7 @@ class UserController extends Controller
             'tgl_lahir'     =>   $request->tgl,
             'jk'            =>   $request->gender,
             'jabatan'       =>   json_encode([$request->jabatan]),
-            'password'      =>  $request->password,
+            'password'      =>   Hash::make($request->password),
         ]);
 
         return redirect()->route('datauser');
