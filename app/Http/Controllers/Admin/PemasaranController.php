@@ -18,7 +18,7 @@ class PemasaranController extends Controller
     {
         $data = Pemasaran::all();
         $no = 1;
-        // return view('Admin.index_lokasi', compact('data', 'no'));
+        return view('Admin.index_pemasaran', compact('data', 'no'));
     }
 
     /**
@@ -28,7 +28,9 @@ class PemasaranController extends Controller
      */
     public function create()
     {
-        // return view('Admin.create_lokasi');
+        $data = Pemasaran::all();
+
+        return view('Admin.create_pemasaran', compact('data'));
     }
 
     /**

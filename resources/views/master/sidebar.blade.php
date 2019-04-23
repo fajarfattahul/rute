@@ -33,7 +33,7 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#">Data Pemasaran</a></li>                       
+                        <li><a href="{{ route('datapemasaran')}}">Data Pemasaran</a></li>                       
                         <li><a href="#">Data Pemesanan</a></li>                       
                         <li><a href="#">Data Pengiriman</a></li>                       
                     </ul>
