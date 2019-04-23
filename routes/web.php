@@ -69,9 +69,9 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['au
     });
 });
 
-// Route::group(['prefix' => '/admin', 'namespace' => 'Admin'], function () {
-
-// });
+Route::group(['prefix' => '/sales', 'namespace' => 'Sales', 'middleware' => ['auth', 'sales']], function () {
+    Route::get('/datasales', 'SalesController@index')->name('datasales');
+});
 
 Auth::routes();
 

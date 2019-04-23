@@ -40,13 +40,23 @@ class User extends Authenticatable
 
     public function lokasis()
     {
-        return $this->belongsToMany(Lokasi::class, 'pemasarans', 'id_sales', 'id_lokasi');
+        return $this->belongsToMany('App\Lokasi', 'pemasarans', 'id_sales', 'id_lokasi');
     }
 
     public function admin()
     {
         $admin = json_encode(["Admin"]);
         if ($this->jabatan == $admin) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function sales()
+    {
+        $sales = json_encode(["sales"]);
+        if ($this->jabatan == $sales) {
             return true;
         } else {
             return false;
