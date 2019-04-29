@@ -61,6 +61,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin', 'middleware' => ['au
 
     Route::group(['prefix' => '/pemasaran'], function () {
         Route::get('/datapemasaran', 'PemasaranController@index')->name('datapemasaran');
+        Route::get('/detailpemasaran/{id}', 'PemasaranController@detail')->name('detailpemasaran');
         Route::get('/createpemasaran', 'PemasaranController@create')->name('createpemasaran');
         Route::post('/storepemasaran', 'PemasaranController@store')->name('storepemasaran');
         Route::get('/editpemasaran/{id}', 'PemasaranController@edit')->name('editpemasaran');

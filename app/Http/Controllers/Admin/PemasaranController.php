@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Pemasaran;
+use App\User;
+use App\Lokasi;
 use Validator;
+use Auth;
 
 class PemasaranController extends Controller
 {
@@ -16,9 +19,15 @@ class PemasaranController extends Controller
      */
     public function index()
     {
-        $data = Pemasaran::all();
+        $datau = User::where('jabatan', json_encode(["sales"]))->get();
         $no = 1;
-        return view('Admin.index_pemasaran', compact('data', 'no'));
+        return view('Admin.index_pemasaran', compact('datau', 'no'));
+    }
+
+    public function detail($id)
+    {
+        $datal = User::find($id)->lokasis()->orderBy('nama_lokasi')->get();
+        dd($datal);
     }
 
     /**
@@ -28,9 +37,9 @@ class PemasaranController extends Controller
      */
     public function create()
     {
-        $data = Pemasaran::all();
-
-        return view('Admin.create_pemasaran', compact('data'));
+        $datau = User::where('jabatan', json_encode(["sales"]))->get();
+        $datal = Lokasi::all();
+        return view('Admin.create_pemasaran', compact('datau', 'datal'));
     }
 
     /**
@@ -48,7 +57,7 @@ class PemasaranController extends Controller
             // parameter unique harus = nama_table,property
         ], [
             'sales.required'         =>     'nama sales tidak boleh kosong',
-            'wilayah.required'       =>     'wilayah tidak boleh kosong',
+            'lokasi.required'       =>     'wilayah tidak boleh kosong',
             'waktu.required'         =>     'waktu pemasaran tidak boleh kosong',
         ])->validate();
 
