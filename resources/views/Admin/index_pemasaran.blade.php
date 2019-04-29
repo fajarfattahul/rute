@@ -8,15 +8,15 @@
 
     @include('master.header')
 
-  <!-- Left side column. contains the logo and sidebar -->
+<!-- Left side column. contains the logo and sidebar -->
     @include('master.sidebar')
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
 
         <section class="content-header">
             <h1>
-              <i>Data Barang</i><br>
+            <i>Data Pemasaran</i><br>
             </h1>
 
             <div class="content">
@@ -44,19 +44,16 @@
                                 <tr>
                                     <th>NO</th>
                                     <th>Nama Sales</th>
-                                    <th>Lokasi</th>
-                                    <th>Waktu</th>
+                                    <th>Email</th>
                                     <th>Aksi</th>
                                 </tr>
-                                @foreach ($data as $d)
+                                @foreach ($datau as $d)
                                     <tr>
                                         <td>{{$no++}}</td>
-                                        <td>{{$d->id_sales}}</td>
-                                        <td>{{$d->id_lokasi}}</td>
-                                        <td>{{$d->waktu_pemasaran}}</td>
+                                        <td><a href="{{ route('detailpemasaran', $d->id) }}">{{$d->name}}</a></td>
+                                        <td>{{ $d->email }}</td>
                                         <td>
                                             <a href="{{ route('editpemasaran', $d->id) }}"><span class="label label-warning">Edit</span></a>
-                                            <a><span class="label label">       </span></a>
                                             <form action="{{ route('deletepemasaran') }}" method="post">
                                                 {{ csrf_field() }}
                                                 <button type="submit" name="delete" value="{{$d->id}}" class="label label-danger">Hapus</button>

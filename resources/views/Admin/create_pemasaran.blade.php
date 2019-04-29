@@ -15,7 +15,7 @@
     <div class="content-wrapper">
         <form action="{{ route('storepemasaran') }}" method="POST">
         {{ csrf_field() }}
-        
+
               <!-- SELECT2 EXAMPLE -->
             <div class="box box-default">
                 <div class="box-header with-border">
@@ -33,8 +33,8 @@
                                     <div class="form-group">
                                         <label>Nama Sales</label>
                                             <select class="form-control select2" style="width: 100%;" name="sales">
-                                                @foreach ($data as $d)
-                                                    <option value="{{$d['id_sales']}}">{{$d['id_sales']}}</option>
+                                                @foreach ($datau as $d)
+                                                    <option value="{{$d->id}}">{{$d->username}}</option>
                                                 @endforeach
                                             </select>
                                     </div>
@@ -42,9 +42,10 @@
 
                                 <div class="form-group">
                                     <label>Wilayah</label>
-                                        <select class="form-control select2" style="width: 100%;" name="wilayah">
-                                            <option selected="selected" value="utara">Utara</option>
-                                            <option value="selatan">Selatan</option>
+                                        <select class="form-control select2" style="width: 100%;" name="lokasi">
+                                            @foreach ($datal as $l)
+                                                    <option value="{{$l->id}}">{{$l->wilayah}}</option>
+                                            @endforeach
                                         </select>
                                 </div>
                                 <!-- /.form-group -->
@@ -55,7 +56,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="time" class="form-control pull-right" name="waktu">
+                                        <input type="date" class="form-control pull-right" name="waktu">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -77,7 +78,7 @@
                 </div>
                 <!-- /.box-body -->
             </div>
-            <!-- /.box -->    
+            <!-- /.box -->
         </form>
     </div>
   <!-- /.content-wrapper -->
